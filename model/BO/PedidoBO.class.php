@@ -8,7 +8,7 @@ class PedidoBO
 	{
 		$pedidoDAO = new PedidoDAO();
 		
-		 $pedidoDAO->cadastrarPedido($pedido)				
+		 $pedidoDAO->cadastrarPedido($pedido);				
 		
 	}
   
