@@ -1,5 +1,7 @@
 <?php 
-	include '../model/BO/UsuarioBO.class.php';  
+
+	include '../model/BO/UsuarioBO.class.php';
+	include_once '../model/DAO/UsuarioDAO.class.php';
 
    	$login = $_POST['nome'];
 	$senha = $_POST['senha'];
@@ -8,7 +10,6 @@
 	$bo = new UsuarioBO();
 
 	$logado = $bo->verificarLogin($login, $senha);
-
 
 	if($logado === true){
 		session_start();

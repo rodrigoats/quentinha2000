@@ -1,15 +1,5 @@
- <?php 
-	
-	session_start();
+ <?php session_start();
 
-	include_once 'model/BO/PedidoBO.class.php';
-	include_once 'model/BO/UsuarioBO.class.php';
-    include_once 'model/BO/RefeicaoBO.class.php';
-	include_once 'model/DAO/PedidoDAO.class.php';	
-  	include_once 'model/DAO/UsuarioDAO.class.php';
-	include_once 'model/DAO/RefeicaoDAO.class.php';
-	include_once 'model/entity/Boleto.class.php';
-	
 
 	if($_SERVER['REQUEST_URI'] == "/quentinha/login.php")
 		$isLoginPage = true;
@@ -23,6 +13,7 @@
 		if($_POST['logout'])
 			session_destroy();
 	}
+	// include_once 'model/DAO/GenericDao.class.php';
  ?>
 
  <!DOCTYPE html>

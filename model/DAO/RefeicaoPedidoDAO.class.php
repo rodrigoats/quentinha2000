@@ -7,7 +7,7 @@
         }
 
         function cadastrarTipoRefeicao($idPedido, $idRefeicao) {
-            $arrayDadosRefeicaoPedido = array("idPedido", $idPedido, "idRefeicao;", $idRefeicao);
+            $arrayDadosRefeicaoPedido = array("idpedido", $idPedido, "idrefeicao", $idRefeicao);
             
             $this->salvar("refeicaopedido", $arrayDadosRefeicaoPedido);
         }

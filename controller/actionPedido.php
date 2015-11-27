@@ -1,8 +1,13 @@
 <?php 
-	include_once 'PedidoController.class.php';
+
+	if(isset($_POST['opcaoRefeicao'])){
+		$opcaoRefeicao = $_POST['opcaoRefeicao'];
+
+		$RefeicaoBO = new RefeicaoBO();
+
+		
+	}
 
 
-	$pedidoController->cadastrarPedido();
-	header("location:../index.php");
 
  ?>

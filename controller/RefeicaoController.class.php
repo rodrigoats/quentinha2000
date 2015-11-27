@@ -1,6 +1,6 @@
 <?php
 
-
+    include 'model/BO/RefeicaoBO.class.php';
 
     class RefeicaoController {
         

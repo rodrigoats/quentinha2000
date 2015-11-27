@@ -1,7 +1,5 @@
 <?php
     
-    include $_SERVER['DOCUMENT_ROOT'].'/quentinha/model/DAO/UsuarioDAO.class.php';
-
     class UsuarioBO{
         
         function verificarLogin ($login, $senha) {
@@ -16,6 +14,12 @@
             }
             
             return $isLogin;
+        }
+
+        function getUsuarioByNome($nome){
+            $usuarioDAO = new UsuarioDAO();   
+            $usuario = $usuarioDAO->getUsuarioByNome($nome);
+            return $usuario; 
         }
     }
 ?>

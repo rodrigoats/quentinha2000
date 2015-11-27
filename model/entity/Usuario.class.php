@@ -1,16 +1,10 @@
 <?php
     class Usuario {
         
-        private $id;
-        private $nome;
-        private $senha;
-        private $endereco;
-        
-        function __construct($nome, $senha, $endereco) {
-            $this->nome = $nome;
-            $this->senha = $senha;
-            $this->endereco = $endereco;
-        }
+        var $id;
+        var $nome;
+        var $senha;
+        var $endereco;
 
         function getId() {
             return $this->id;

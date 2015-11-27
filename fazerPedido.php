@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
     include('header.php');
-    include_once 'controller/RefeicaoController.class.php';
-    
+    include 'controller/RefeicaoController.class.php';
     $refeicaoController = new RefeicaoController();
 ?>
 
-    <form method="POST" action="controller/actionPedido.php">
+    <form method="POST" action="actionPedido.php">
         <p >
             <h1 align="center">Monte seu almoço!</h1>
         </p>

@@ -1,17 +1,20 @@
 <?php 
 	
-	// include_once '../model/BO/PedidoBO.class.php';
-	
-
-
 	/**
 	* 
 	*/
+
+include 'model/BO/PedidoBO.class.php';
+include 'model/BO/RefeicaoBO.class.php';
+include 'model/BO/UsuarioBO.class.php';
+include 'model/DAO/UsuarioDAO.class.php';
+include_once 'model/entity/Usuario.class.php';
+include 'model/entity/Refeicao.class.php';
+include 'model/entity/Pedido.class.php';
+
 class PedidoController
 	{
 		var $pedidoBO;
-
-
 
 
 		function listarPedidos(){
@@ -26,21 +29,24 @@ class PedidoController
 		}
 
 		function cadastrarPedido(){
-            $usuario = $_SESSION['login'];
+			session_start();
+
+			$usuarioBO = new UsuarioBO();
+			$usuario = new Usuario();
+			$usuario = $usuarioBO->getUsuarioByNome($_SESSION['login']);
+            
             
             date_default_timezone_set('America/Sao_Paulo');
-            $dataAtual = date('d/m/Y');
+            $dataAtual = date('Y-m-d');
             
             $idRefeicaoSelect = $_POST['opcaoRefeicao'];
-            echo $idRefeicaoSelect;
             $refeicaoBO = new RefeicaoBO();
+            $refeicaoSelecionada = new Refeicao();
             $refeicaoSelecionada = $refeicaoBO->getRefeicaoById($idRefeicaoSelect);
             
             $pedido = new Pedido($usuario,$dataAtual,$refeicaoSelecionada->getValor());
-
-            echo $pedido->getValorTotal();
             $pedidoBO = new PedidoBO();
-            $pedidoBO->cadastrarPedido($pedido);
+            $pedidoBO->cadastrarPedido($pedido, $refeicaoSelecionada);
         }
 	}
 	

@@ -5,11 +5,7 @@
         private $id;
         private $nome;
         private $tipoRefeicao;
-        
-        function __construct($nome, $tipoRefeicao) {
-            $this->nome = $nome;
-            $this->tipoRefeicao = $tipoRefeicao;
-        }
+        private $valor;
         
         function getId() {
             return $this->id;
@@ -23,6 +19,10 @@
             return $this->tipoRefeicao;
         }
 
+        function getValor() {
+            return $this->valor;
+        }
+
         function setId($id) {
             $this->id = $id;
         }
@@ -33,6 +33,10 @@
 
         function setTipoRefeicao($tipoRefeicao) {
             $this->tipoRefeicao = $tipoRefeicao;
+        }
+
+        function setValor($valor) {
+            $this->valor = $valor;
         }
     }
 ?>

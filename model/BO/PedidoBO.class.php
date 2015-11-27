@@ -1,14 +1,17 @@
 <?php
 
+include 'model/DAO/PedidoDAO.class.php';
+include 'model/entity/Boleto.class.php';
+
 class PedidoBO
 
 {
-	function cadastrarPedido($pedido)
+	function cadastrarPedido($pedido, $refeicao)
 	
 	{
 		$pedidoDAO = new PedidoDAO();
 		
-		 $pedidoDAO->cadastrarPedido($pedido);				
+		 $pedidoDAO->cadastrarPedido($pedido, $refeicao);				
 		
 	}
   
